@@ -5,21 +5,22 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
 
-  hash_map map;
-  init_hash_map(&map); 
-  
-  insert(&map, "apple", "red");
-  insert(&map, "banana", "yellow");
+	hash_map map;
+	init_hash_map(&map);
 
-  printf("apple: %s\n", search(&map, "apple")); 
-  printf("banana: %s\n", search(&map, "banana")); 
+	insert(&map, "apple", "red");
+	insert(&map, "banana", "yellow");
 
-  hash_map_delete(&map, "banana");
-  printf("banana after delete: %s\n", search(&map, "banana"));
+	printf("apple: %s\n", search(&map, "apple"));
+	printf("banana: %s\n", search(&map, "banana"));
 
-  free_hash_map(&map);
+	hash_map_delete(&map, "banana");
+	printf("banana after delete: %s\n", search(&map, "banana"));
 
-  return 0;
+	free_hash_map(&map);
+
+	return 0;
 }
